@@ -1417,7 +1417,7 @@ angular.module('vr.directives.slider', ['ngTouch']).directive('slider',
                                              * The current x position of the mouse/finger/etc.
                                              * @type {number}
                                              */
-                                            var currentX = event.clientX || event.x || (event.touches ? event.touches[0].clientX : (event.originalEvent.touches ? event.originalEvent.touches[0].clientX : -1));
+                                            var currentX = event.clientX || event.x || (event.touches ? event.touches[0].clientX : ((event.originalEvent.touches && event.originalEvent.touches.length) ? event.originalEvent.touches[0].clientX : -1));
 
                                             // No ref to clientX
                                             if (currentX < 0) {
